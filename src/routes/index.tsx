@@ -105,6 +105,7 @@ function Home() {
           <h3 className="mt-4 text-3xl font-semibold text-primary">For job seekers</h3>
           <p className="mt-2 text-muted-foreground">Browse vacancies, get CV support and prepare for your next role.</p>
           <Button asChild className="mt-6"><Link to="/careers">I'm Looking for a Job</Link></Button>
+          <Button asChild variant="outline" className="ml-2 mt-6"><Link to="/career-packages">Career Packages</Link></Button>
         </div>
       </section>
 
