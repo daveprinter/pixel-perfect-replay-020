@@ -4,6 +4,7 @@ import { Menu, X, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site, waLink, waMessages } from "@/lib/site";
 import { activeServices } from "@/lib/services";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -18,7 +19,9 @@ const nav = [
 function Logo({ light }: { light?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-2">
-      <span className="grid size-9 place-items-center rounded-sm bg-accent font-display text-lg font-bold text-accent-foreground">H</span>
+      <span className={`grid size-10 place-items-center rounded-md ${light ? "bg-primary-foreground p-1" : ""}`}>
+        <img src={logo} alt="" width={40} height={40} className="h-full w-full object-contain" />
+      </span>
       <span className={`font-display text-lg font-semibold ${light ? "text-primary-foreground" : "text-primary"}`}>{site.name}</span>
     </Link>
   );
