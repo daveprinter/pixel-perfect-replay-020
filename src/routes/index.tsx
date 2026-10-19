@@ -10,6 +10,8 @@ import hero from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "People First. Business Forward. | HR Solutions" },
       { name: "description", content: "Recruitment, staffing, HR consultancy, payroll support and career services for organizations and job seekers." },
       { property: "og:title", content: "People First. Business Forward." },

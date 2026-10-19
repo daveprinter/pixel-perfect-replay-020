@@ -4,7 +4,9 @@ import { PageHero } from "@/components/site/Layout";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Privacy Policy | HR Solutions" },
       { name: "description", content: "How we handle personal information shared through this website." },
       { property: "og:title", content: "Privacy Policy" },
       { property: "og:description", content: "How we handle your personal information." },

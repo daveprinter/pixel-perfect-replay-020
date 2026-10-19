@@ -12,6 +12,8 @@ export const Route = createFileRoute("/services/")({
   validateSearch: z.object({ category: z.enum(serviceCategories).optional() }),
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "HR Services Directory | Recruitment, Consultancy & More" },
       { name: "description", content: "Browse our HR services: recruitment, staffing, consultancy, payroll, training, performance and career support." },
       { property: "og:title", content: "HR Services Directory" },

@@ -9,10 +9,12 @@ import { ServiceCard } from "@/components/site/ServiceCard";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers & Job Vacancies" },
-      { name: "description", content: "Browse current vacancies and get career support from our HR team." },
-      { property: "og:title", content: "Careers & Job Vacancies" },
-      { property: "og:description", content: "Open roles and career support for job seekers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Career & Professional Development | HR Solutions" },
+      { name: "description", content: "Explore CV writing, cover letters, LinkedIn optimization, interview preparation and career planning." },
+      { property: "og:title", content: "Career & Professional Development" },
+      { property: "og:description", content: "Career services and packages for students, graduates and experienced professionals." },
     ],
   }),
   component: Careers,

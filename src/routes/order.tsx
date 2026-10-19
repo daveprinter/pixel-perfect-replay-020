@@ -15,6 +15,8 @@ export const Route = createFileRoute("/order")({
   validateSearch: z.object({ service: z.string().optional() }),
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Order an HR Service | Request a Quote" },
       { name: "description", content: "Submit a free request for any of our HR services. We'll review it and confirm next steps." },
       { property: "og:title", content: "Order an HR Service" },

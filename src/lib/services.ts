@@ -132,7 +132,7 @@ export const services: Service[] = [
     problems: ["CV not getting responses", "Career change", "Interview nerves"],
     deliverables: ["Professional CV", "Redesigned layout", "Editable document and PDF"],
     provide: ["Your current CV", "Target roles", "Key achievements"],
-    whatsapp: "Hello, I am interested in your CV Writing and Career Support service. Please share the available packages and pricing.",
+    whatsapp: "Hello, I am interested in your Professional CV Writing & Redesign service. Please share the process and a quote.",
     price: quote, faqs: commonFaq, enabled: true,
   },
   {
