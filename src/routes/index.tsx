@@ -10,6 +10,8 @@ import hero from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "People First. Business Forward. | HR Solutions" },
       { name: "description", content: "Recruitment, staffing, HR consultancy, payroll support and career services for organizations and job seekers." },
       { property: "og:title", content: "People First. Business Forward." },
@@ -105,6 +107,7 @@ function Home() {
           <h3 className="mt-4 text-3xl font-semibold text-primary">For job seekers</h3>
           <p className="mt-2 text-muted-foreground">Browse vacancies, get CV support and prepare for your next role.</p>
           <Button asChild className="mt-6"><Link to="/careers">I'm Looking for a Job</Link></Button>
+          <Button asChild variant="outline" className="ml-2 mt-6"><Link to="/career-packages">Career Packages</Link></Button>
         </div>
       </section>
 

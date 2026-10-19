@@ -4,7 +4,9 @@ import { PageHero } from "@/components/site/Layout";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms and Conditions" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Terms and Conditions | HR Solutions" },
       { name: "description", content: "Terms for using this website and submitting service requests." },
       { property: "og:title", content: "Terms and Conditions" },
       { property: "og:description", content: "Website and service request terms." },

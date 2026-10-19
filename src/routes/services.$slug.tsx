@@ -15,6 +15,8 @@ export const Route = createFileRoute("/services/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
           { title: `${loaderData.name} | HR Services` },
           { name: "description", content: loaderData.short },
           { property: "og:title", content: loaderData.name },
@@ -38,13 +40,14 @@ function List({ title, items }: { title: string; items: string[] }) {
 
 function Detail() {
   const { slug } = Route.useLoaderData();
-  const s = getService(slug)!;
+  const s = getService(slug);
+  if (!s) throw notFound();
   const related = activeServices.filter((r) => r.slug !== s.slug && r.category === s.category).slice(0, 3);
   return (
     <>
       <PageHero eyebrow={s.category} title={s.name} intro={s.short}>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild variant="gold" size="lg"><Link to="/order" search={{ service: s.slug }}>Order Service Now</Link></Button>
+          <Button asChild variant="gold" size="lg" className="h-auto min-h-11 whitespace-normal"><Link to="/order" search={{ service: s.slug }}>{s.orderLabel ?? "Order Service Now"}</Link></Button>
           <WaButton message={s.whatsapp} />
         </div>
       </PageHero>
@@ -67,7 +70,7 @@ function Detail() {
           <p className="mt-2 font-display text-2xl font-semibold text-primary">{s.price}</p>
           <p className="mt-2 text-sm text-muted-foreground">For: {s.audience.join(" & ")}</p>
           <p className="mt-1 text-sm text-muted-foreground">Timeframe agreed during consultation.</p>
-          <Button asChild className="mt-6 w-full"><Link to="/order" search={{ service: s.slug }}>Order Service Now</Link></Button>
+          <Button asChild className="mt-6 h-auto min-h-10 w-full whitespace-normal text-center"><Link to="/order" search={{ service: s.slug }}>{s.orderLabel ?? "Order Service Now"}</Link></Button>
         </aside>
       </section>
       {related.length > 0 && (

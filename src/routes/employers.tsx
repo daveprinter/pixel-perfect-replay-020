@@ -9,6 +9,8 @@ import { waMessages } from "@/lib/site";
 export const Route = createFileRoute("/employers")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "HR Services for Employers | Recruitment & Workforce" },
       { name: "description", content: "Recruitment, staffing, HR consultancy and workforce solutions for organizations." },
       { property: "og:title", content: "HR Services for Employers" },

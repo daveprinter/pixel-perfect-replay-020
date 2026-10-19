@@ -4,6 +4,8 @@ import { PageHero } from "@/components/site/Layout";
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "HR Resources & Insights" },
       { name: "description", content: "Practical guidance on recruitment, CVs, interviews and managing people." },
       { property: "og:title", content: "HR Resources & Insights" },

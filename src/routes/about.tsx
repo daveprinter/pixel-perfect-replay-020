@@ -6,6 +6,8 @@ import interview from "@/assets/interview.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "About Us | HR Solutions Partner" },
       { name: "description", content: "Our mission, vision, values and the clients we serve." },
       { property: "og:title", content: "About Us" },

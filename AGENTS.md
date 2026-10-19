@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Company settings live in src/lib/site.ts and the service catalogue in src/lib/services.ts; pages read from these so the content can later move to a database without changing the pages.
+- Services and career packages share the catalogue and dynamic detail/order flow; category filters use validated URL search so navigation and direct links stay consistent.

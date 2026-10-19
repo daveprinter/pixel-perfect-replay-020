@@ -12,6 +12,8 @@ import { site, waLink, waMessages } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Contact Us | Talk to Our HR Team" },
       { name: "description", content: "Reach our HR team on WhatsApp or phone at +254 722 493288." },
       { property: "og:title", content: "Contact Our HR Team" },

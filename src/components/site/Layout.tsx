@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import { Menu, X, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, MessageCircle, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site, waLink, waMessages } from "@/lib/site";
-import { activeServices } from "@/lib/services";
+import { activeServices, serviceCategories } from "@/lib/services";
 import logo from "@/assets/logo.png";
 
 const nav = [
@@ -35,6 +35,7 @@ export function Header() {
         <Logo />
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {nav.map((n) => (
+            n.to === "/services" ? <details key={n.to} className="relative"><summary className="flex cursor-pointer list-none items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground">Services<ChevronDown className="size-3" /></summary><div className="absolute left-0 top-full w-72 rounded-md border border-border bg-background p-2 shadow-card"><Link to="/services" className="block rounded-md px-3 py-2 text-sm text-primary">All Services</Link>{serviceCategories.map((category) => <Link key={category} to="/services" search={{ category }} onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")} className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-secondary hover:text-primary">{category}</Link>)}</div></details> :
             <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/" }}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary"
               activeProps={{ className: "text-primary" }}>{n.label}</Link>
@@ -53,6 +54,7 @@ export function Header() {
             {nav.map((n) => (
               <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2.5 font-medium text-foreground">{n.label}</Link>
             ))}
+            {serviceCategories.map((category) => <Link key={category} to="/services" search={{ category }} onClick={() => setOpen(false)} className="py-2 pl-3 text-sm text-muted-foreground">{category}</Link>)}
             <Button asChild variant="gold" className="mt-2"><Link to="/order" onClick={() => setOpen(false)}>Order a Service</Link></Button>
           </div>
         </nav>
