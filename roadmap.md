@@ -1,4 +1,5 @@
 # Roadmap
+- [ ] Add uploaded career services, packages, category navigation and verify ordering
 - [x] Public site: home, about, services + detail pages, employers, careers, resources, contact, order, privacy, terms
 - [x] WhatsApp ordering with service-specific messages and request reference
 - [ ] Save requests/applications and admin dashboard (needs Lovable Cloud — awaiting user go-ahead)
